@@ -1,0 +1,54 @@
+<html>
+  <header>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="favicon.ico">
+    <title>
+      Productos
+    </title>
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
+  </header>
+  <body>
+      <!-- As a link -->
+<nav class="navbar navbar-light bg-primary">
+        <a class="btn btn-primary" href="../admin">Administrador</a>
+      </nav>
+        <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                  <h1 class="display-4 font-weight-bold">Store <span class="text-danger">Modo Lectura</span></h1>
+                  <p class="lead">Administra tus productos de la tienda con DJANGO</p>
+                </div>
+              </div>
+    <div class="container shadow-nonep-3 mb-5  rounded">
+            <ul class="list-group  ">
+                    <a href="#" class="list-group-item list-group-item-action active">
+                            <div class="d-flex w-100 justify-content-between">
+                              <h5 class="mb-1">Lista de productos</h5>                            
+                            </div>
+                          </a>
+              {% for producto in productos %}
+              <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Nombre del producto: {{ producto.nombre_producto }}</h5>
+                      <small class="text-muted">Stock : <span class="text-danger">{{producto.stock}}</span></small>
+                    </div>
+                    <p class="mb-1">Precio: ${{producto.precio_producto}}</p>
+                    <small class="text-muted">ID# : {{producto.id_categoria}}</small>
+                  </a>
+              <div class="d-flex w-100 justify-content-between">
+               
+              </div>
+              {% endfor %}
+            </ul>
+            {% bootstrap_javascript jquery='full' %}
+    </div>
+    <div class="jumbotron jumbotron-fluid m-0 bg-warning">
+            <div class="container d-flex justify-content-around">
+              <p class="lead font-weight-bold">Github : soulone </p>
+            </div>
+          </div>
+  </body>
+</html>
